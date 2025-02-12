@@ -14,6 +14,30 @@ int calculate_captcha_part_one (std::string input){
     return total;
 }
 
+int calculate_captcha_part_two (std::string input){
+    int total = 0;
+
+    for (int i = 0 ; i < input.length(); ++ i) {
+        int index_to_match = (input.length() / 2) + i;
+        if (index_to_match > input.length()) {
+            int wrapped_index = index_to_match - input.length();
+            if (input[wrapped_index == input[i]]){
+                total += input[i];
+            }
+        } else {
+            if (input[index_to_match] == input[i]){
+                total += input[i];
+            }
+        }
+    }
+
+    return total;
+}
+
+void part_two () {
+    std::cout << "Example 1 :> " << calculate_captcha_part_two ("1212") << std::endl;
+}
+
 
 
 void part_one () {
@@ -30,6 +54,7 @@ void part_one () {
 int main () {
     
     part_one();
+    part_two();
 
     return 0;
 }
