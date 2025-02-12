@@ -1,25 +1,23 @@
 #include "helpers.h"
-
 #include <iostream>
 #include <fstream>
+#include <sstream>
 
 std::string read_file (std::string file_name) {
-    
     std::ifstream file(file_name);
 
-    if(!file.is_open()) {
+    if (!file.is_open()) {
         std::cerr << "Could not open the file - '"
                   << file_name << "'" << std::endl;
         return "";
     }
 
-    std::string line;
-    std::string data;
+    std::stringstream buffer;
+    buffer << file.rdbuf();
+    std::string data = buffer.str();
 
-    while(file) {
-        std::getline(file, line);
-        data += line + "\n";
-    }
+    // Remove any whitespace characters
+    data.erase(std::remove_if(data.begin(), data.end(), ::isspace), data.end());
 
     file.close();
 
