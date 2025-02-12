@@ -19,7 +19,7 @@ int calculate_captcha(std::string input){
 }
 
 int main () {
-    std::string data = read_file("../Data/day_1.txt");
+    std::string data = read_file("../../Data/day_1.txt");
     
     // Test example 1
     int test_1 = calculate_captcha("1122");
