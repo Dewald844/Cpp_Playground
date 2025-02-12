@@ -1,7 +1,6 @@
 #include "helpers.h"
 #include <iostream>
 
-
 int calculate_captcha_part_one (std::string input){
     int total = 0;
     
@@ -41,8 +40,6 @@ void part_two () {
     std::string data = read_file("./Data/day_1.txt");
     std::cout << "| Part 2 > " << calculate_captcha_part_two (data) << std::endl;
 }
-
-
 
 void part_one () {
     std::string data = read_file("./Data/day_1.txt");
