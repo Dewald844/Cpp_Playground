@@ -37,12 +37,12 @@ int calculate_captcha_part_two (std::string input){
 }
 
 void part_two () {
-    std::string data = read_file("./Data/day_1.txt");
+    std::string data = read_file_as_string("./Data/day_1.txt");
     std::cout << "| Part 2 > " << calculate_captcha_part_two (data) << std::endl;
 }
 
 void part_one () {
-    std::string data = read_file("./Data/day_1.txt");
+    std::string data = read_file_as_string("./Data/day_1.txt");
     std::cout << "| Part 1 > " << calculate_captcha_part_one (data) << std::endl;
 }
 
