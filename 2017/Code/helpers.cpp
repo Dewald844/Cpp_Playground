@@ -37,6 +37,11 @@ std::vector<std::string> read_file_as_vector (std::string file_name) {
         throw  "Could not open file";
     }
 
+    std::string line;
+    while (std::getline(file, line)) {
+        data.push_back(line);
+    }
+
     file.close();
 
     return data;
